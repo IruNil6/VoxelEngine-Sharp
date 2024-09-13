@@ -5,6 +5,6 @@ This is an engine written in C# using the OpenTK library (OpenGL), for games sim
 The ManicDigger engine is taken as a basis, but with major changes and the addition of its own functionality
 
 # Who are the main developers of the engine?
-The main organization is [EHOT Studio](https://github.com/EHOT-Studio)
+The main organization is [EHOT Studio](https://github.com/EHOT-Studio)<br/>
 The main developer of the engine is [IruNil](https://github.com/IruNil6)<br/>
 The main 3D Modeler is [SilRudy](https://sketchfab.com/SilRudy/models)

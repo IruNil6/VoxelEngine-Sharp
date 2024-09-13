@@ -12,14 +12,15 @@ namespace EngineLibrary.DI
         static GlobalServiceProvider()
         {
             var runtimePath = Directory.GetCurrentDirectory();
-
+            
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(runtimePath)
-                .AddJsonFile("appsettings.json")
+                .AddIniFile("options.ini", false, true)
                 .Build();
 
             var services = new ServiceCollection();
             LoggingStartup.Configure(services, Configuration);
+            OptionsStartup.Configure(services, Configuration);
 
             ServiceProvider = services.BuildServiceProvider();
         }

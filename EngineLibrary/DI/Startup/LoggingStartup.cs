@@ -12,7 +12,11 @@ namespace EngineLibrary.DI.Startup
             services.AddLogging(builder =>
             {
                 var loggerConfiguration = new LoggerConfiguration()
-                    .ReadFrom.Configuration(configuration);
+                    
+                    .MinimumLevel
+                    .Debug()
+                    .WriteTo
+                    .Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{SourceContext}] {Message:lj}{NewLine}{Exception}");
 
                 var logger = loggerConfiguration.CreateLogger();
                 builder.AddSerilog(logger);

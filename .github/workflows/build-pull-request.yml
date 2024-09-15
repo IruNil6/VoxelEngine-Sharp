@@ -1,0 +1,64 @@
+name: .NET Core Build Pull Request
+on:
+  pull_request:
+    branches: [ "release" ]
+jobs:
+  build-windows:
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+    name: Build-Windows
+    runs-on: windows-latest
+    env:
+      Solution_Name: VoxelEngine-Sharp.sln
+      Configuration: ${{ matrix.configuration }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install .Net Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore the application
+      run: dotnet restore
+    
+    - name: .NET Build Client
+      run: dotnet build Client /p:Configuration=$env:Configuration --no-restore
+      
+    - name: .NET Build Server
+      run: dotnet build Server /p:Configuration=$env:Configuration --no-restore
+
+  build-ubuntu:
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+    name: Build-Ubuntu
+    runs-on: ubuntu-latest
+    env:
+      Solution_Name: VoxelEngine-Sharp.sln
+      Configuration: ${{ matrix.configuration }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install .Net Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore the application
+      run: dotnet restore
+    
+    - name: .NET Build Client
+      run: dotnet build Client --configuration $env:Configuration --no-restore
+      
+    - name: .NET Build Server
+      run: dotnet build Server --configuration $env:Configuration --no-restore

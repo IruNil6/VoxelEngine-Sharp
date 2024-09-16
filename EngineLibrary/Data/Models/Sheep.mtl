@@ -1,0 +1,20 @@
+# Made in Blockbench 4.10.4
+newmtl m_7e5c2448-4795-8c39-c7c4-9a212afaac94
+map_Kd Body.png
+newmtl m_5940958f-25ac-4eff-cead-7139f3844f7b
+map_Kd ArmR.png
+newmtl m_6b44912d-e8b2-19fb-96d2-20a8ef667604
+map_Kd FootR.png
+newmtl m_545e4997-ce4b-c8db-1147-0b2e5de22622
+map_Kd ArmL.png
+newmtl m_d78bc38e-87c1-a12c-936c-1ed54919b87e
+map_Kd FootR.png
+newmtl m_ddbebe4d-b810-89a9-ea7a-f3f11f63a497
+map_Kd EarR.png
+newmtl m_3ccfb09d-d412-9776-65c9-79f81aee2bfb
+map_Kd EarL.png
+newmtl m_4a740463-2c7e-7599-461e-8a693587fa1c
+map_Kd Head.png
+newmtl m_78d0dae0-3c80-1e70-0c77-50c43361140f
+map_Kd Tail.png
+newmtl none

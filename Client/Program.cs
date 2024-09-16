@@ -25,7 +25,6 @@ namespace Client
             Logger.LogInformation("Option Width: {0}\nOption Height: {1}", ClientOptions.Width, ClientOptions.Height);
 
             using var game = new GameWindowNative(ClientOptions.Width, ClientOptions.Height, ClientOptions.WindowState);
-
             game.Run();
 
         }
